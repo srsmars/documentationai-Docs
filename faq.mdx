@@ -1,0 +1,107 @@
+---
+title: Frequently Asked Questions
+description: Find answers to common queries about using MOHD SHABAN for your project documentation needs.
+---
+
+## Account and Setup Issues
+
+MOHD SHABAN makes it easy to set up your documentation space. Follow these steps if you encounter common account problems.
+
+<Callout kind="tip">
+  Always use a strong password containing letters, numbers, and symbols for your account security.
+</Callout>
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Visit `https://app.mohdshaban.com/signup` and enter your email and password.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for the verification link and click it to activate your account.
+  </Step>
+  <Step title="Reset Password" icon="key">
+    Go to the login page, click "Forgot Password?", and follow the emailed reset instructions.
+  </Step>
+</Steps>
+
+<Expandable title="What if I don't receive the verification email?">
+  Check your spam folder. If missing, request a new one from the account settings page.
+</Expandable>
+
+## Content Management Tips
+
+Manage your docs efficiently with MDX. Use version control and previews to keep content organized.
+
+<Tabs>
+  <Tab title="Adding Pages" icon="plus">
+    Create new pages via the dashboard. Use YAML frontmatter for metadata:
+
+    ```mdx
+    ---
+    title: My Page
+    description: Page summary
+    ---
+    ```
+
+    Preview changes before publishing.
+  </Tab>
+  <Tab title="Version Control" icon="git-branch">
+    Connect your GitHub repo for automatic syncs.
+
+    <CodeGroup tabs="GitHub, GitLab">
+    ```yaml
+    # .github/workflows/docs.yml
+    name: Deploy Docs
+    on: push
+    jobs:
+      deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - run: npm run build
+    ```
+    ```yaml
+    # .gitlab-ci.yml
+    deploy_docs:
+      stage: deploy
+      script:
+        - npm ci
+        - npm run build
+    ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Integration and Support Options
+
+Integrate MOHD SHABAN with your tools and get help when needed.
+
+<Columns cols={2}>
+  <Card title="API Integration" icon="api" href="#">
+    Use the REST API for custom workflows. Authenticate with `YOUR_API_KEY`.
+  </Card>
+  <Card title="Webhooks" icon="zap" href="#">
+    Set up webhooks for real-time updates to `https://your-webhook.example.com`.
+  </Card>
+  <Card title="Community Forum" icon="users" href="#" target="_blank">
+    Join discussions and share tips.
+  </Card>
+  <Card title="Email Support" icon="mail" href="#" cta="Contact Us">
+    Reach premium support at support@mohdshaban.com.
+  </Card>
+</Columns>
+
+<ExpandableGroup>
+  <Expandable title="How do I customize the brand color?" default-open="true">
+    Update your site settings to `#3B82F6` or your preferred hex code. Changes apply instantly to headers and links.
+  </Expandable>
+  <Expandable title="Can I import from other doc platforms?">
+    Yes, use the import tool for Markdown, MDX, or Git repos. Supports ReadMe, GitBook, and more.
+  </Expandable>
+  <Expandable title="What are the usage limits?">
+    Free tier: 10 pages, 1GB storage. Pro: Unlimited pages, custom domains, and priority support.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="info">
+  For advanced integrations, check the developer portal at `https://dev.mohdshaban.com`.
+</Callout>

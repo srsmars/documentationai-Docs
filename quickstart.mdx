@@ -1,0 +1,114 @@
+---
+title: Quickstart Guide
+description: Get started with MOHD SHABAN by setting up your first documentation space in just a few steps.
+---
+
+## Overview
+
+Set up your MOHD SHABAN documentation space quickly. Follow these steps to create an account, launch a new space, and publish your first page. You complete the process in under five minutes.
+
+<Callout kind="info">
+
+MOHD SHABAN uses MDX for rich documentation with components like Steps and Cards.
+
+</Callout>
+
+## Step-by-Step Setup
+
+Use the guided process below to get running.
+
+<Steps>
+  <Step title="Create Your Account" icon="user-plus">
+
+Sign up using your preferred method. MOHD SHABAN supports multiple authentication options.
+
+<Tabs>
+  <Tab title="Email" icon="mail">
+
+Visit `https://app.mohdshaban.com/signup` and enter your email address. Verify via the confirmation link sent to your inbox.
+
+  </Tab>
+  <Tab title="GitHub" icon="github">
+
+Click the GitHub button on the sign-up page. Authorize MOHD SHABAN to access your repositories for seamless integration.
+
+  </Tab>
+</Tabs>
+
+  </Step>
+
+  <Step title="Create a Documentation Space" icon="folder-plus">
+
+From the dashboard, select **New Space**. Enter a name like `My Project Docs` and choose a slug such as `my-project`.
+
+<Callout kind="tip">
+
+Pick a descriptive slug – it forms your space URL: `https://mohdshaban.com/my-project`.
+
+</Callout>
+
+Click **Create Space** to generate your starter template.
+
+  </Step>
+
+  <Step title="Add and Edit Your First Page" icon="edit-3">
+
+Navigate to the root directory and select **New Page**. Name it `introduction.mdx`.
+
+Replace the default content with your own. Use MDX components for interactive docs.
+
+<CodeGroup tabs="MDX,Markdown">
+  ```mdx
+---
+title: Introduction
+description: Welcome to my project.
+---
+
+## Hello World
+
+This is your first **MDX** page.
+
+<Callout kind="success">Success!</Callout>
+  ```
+  ```markdown
+# Introduction (Markdown only)
+
+Welcome to my project.
+
+**Note:** MDX supports JSX components.
+  ```
+</CodeGroup>
+
+Preview changes in real-time, then click **Publish** to go live.
+
+  </Step>
+</Steps>
+
+## Next Steps
+
+Explore more features after setup.
+
+<Columns cols={3}>
+  <Card title="Customize Theme" icon="palette" href="/docs/customize">
+    Adjust colors, logos, and fonts to match your brand.
+  </Card>
+  <Card title="Invite Collaborators" icon="users" href="/docs/collaborate">
+    Add team members with role-based permissions.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="/docs/git">
+    Connect to GitHub for pull requests and history.
+  </Card>
+</Columns>
+
+## Troubleshooting
+
+<ExpandableGroup>
+  <Expandable title="Page not publishing?">
+    Check for syntax errors in MDX. Wrap special characters like `{variable}` or `<Component>` in backticks. Ensure frontmatter has no blank lines.
+  </Expandable>
+  <Expandable title="Slow previews?">
+    Large images or complex components increase load time. Optimize assets and limit nested elements.
+  </Expandable>
+</ExpandableGroup>
+
+Your documentation space is now ready. Start building comprehensive guides with Steps, Tabs, and more components.

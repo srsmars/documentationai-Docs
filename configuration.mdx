@@ -1,0 +1,150 @@
+---
+title: Configuration and Customization
+description: Learn how to tailor your documentation space with branding, permissions, and advanced settings.
+---
+
+## Overview
+
+Customize your MOHD SHABAN Documentation space to match your brand and control access. Apply your brand color (`#3B82F6`), manage user roles, and handle content exports. These settings ensure your docs reflect your identity while maintaining security.
+
+<Columns cols={3}>
+  <Card title="Brand Colors" icon="palette" href="#brand-colors">
+    Set themes and logos quickly.
+  </Card>
+  <Card title="User Roles" icon="users" href="#user-roles">
+    Control permissions effectively.
+  </Card>
+  <Card title="Export/Import" icon="upload" href="#export-import">
+    Migrate content seamlessly.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Save changes after each configuration step to apply them site-wide.
+</Callout>
+
+## Applying Brand Colors and Themes
+
+Tailor the visual identity of your docs with custom colors and themes.
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Navigate to **Workspace > Settings > Branding**.
+  </Step>
+  <Step title="Set Primary Color" icon="palette">
+    Enter your brand color: `#3B82F6`.
+  </Step>
+  <Step title="Upload Logo" icon="image">
+    Add a logo (PNG, max 500KB) and preview changes.
+  </Step>
+  <Step title="Apply Theme" icon="save">
+    Select **Dark** or **Light** mode and save.
+  </Step>
+</Steps>
+
+Configure advanced themes via the `config.json` file:
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "theme": {
+      "primaryColor": "#3B82F6",
+      "logoPath": "/assets/logo.png",
+      "mode": "auto"
+    }
+  }
+  ```
+  ```yaml
+  theme:
+    primaryColor: "#3B82F6"
+    logoPath: "/assets/logo.png"
+    mode: auto
+  ```
+</CodeGroup>
+
+## Managing User Access and Roles
+
+Define roles to control who edits, views, or admins your docs.
+
+<Tabs>
+  <Tab title="Admin" icon="shield">
+    Full access: edit content, manage users, configure settings.
+
+    <ParamField path="user.role" param-type="string" required="true">
+      Set to `admin` for elevated privileges.
+    </ParamField>
+  </Tab>
+  <Tab title="Editor" icon="edit">
+    Edit and publish pages, no user management.
+
+    <ParamField path="user.role" param-type="string">
+      Set to `editor`.
+    </ParamField>
+  </Tab>
+  <Tab title="Viewer" icon="eye">
+    Read-only access.
+
+    <ParamField path="user.role" param-type="string">
+      Set to `viewer`.
+    </ParamField>
+  </Tab>
+</Tabs>
+
+| Role    | Edit Pages | Manage Users | Export Content |
+|---------|------------|--------------|----------------|
+| Admin   | Yes       | Yes         | Yes           |
+| Editor  | Yes       | No          | Yes           |
+| Viewer  | No        | No          | No            |
+
+<Callout kind="alert">
+  Revoke admin access carefully to avoid lockouts.
+</Callout>
+
+## Exporting and Importing Content
+
+Backup or migrate your documentation easily.
+
+### Export Workflow
+
+<Steps>
+  <Step title="Select Export" icon="download">
+    Go to **Workspace > Export**.
+  </Step>
+  <Step title="Choose Format" icon="file">
+    Pick MDX or ZIP.
+  </Step>
+  <Step title="Download" icon="save">
+    Export all pages or specific sections.
+  </Step>
+</Steps>
+
+### Import Process
+
+Use the CLI for bulk imports:
+
+<CodeGroup tabs="CLI,API">
+  ```bash
+  mohd-shaban import --file docs.zip --workspace my-space
+  ```
+  ```bash
+  curl -X POST https://api.mohdshaban.com/v1/import \
+    -H "Authorization: Bearer YOUR_TOKEN" \
+    -F "file=@docs.zip"
+  ```
+</CodeGroup>
+
+<Expandable title="Advanced Export Options" default-open="false">
+
+Export with metadata:
+
+```json
+{
+  "includeVersions": true,
+  "excludeDrafts": true,
+  "format": "mdx"
+}
+```
+
+</Expandable>
+
+These configurations keep your MOHD SHABAN Documentation secure and on-brand. Test changes in a preview mode first.

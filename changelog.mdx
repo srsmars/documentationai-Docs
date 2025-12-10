@@ -1,0 +1,145 @@
+---
+title: Changelog
+description: Track the evolution of MOHD SHABAN with details on new features, improvements, and bug fixes.
+---
+
+## Changelog Overview
+
+You stay current with MOHD SHABAN's releases through this changelog. Each entry details new features, improvements, bug fixes, and breaking changes. Review the latest updates to leverage enhancements in your documentation workflow.
+
+<Columns cols={3}>
+  <Card title="Latest: v1.2.0" icon="zap" href="#v120">
+    Real-time collaboration and performance boosts.
+  </Card>
+  <Card title="v1.1.0" icon="trending-up" href="#v110">
+    Advanced search and theming options.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v100">
+    Initial stable release with core features.
+  </Card>
+</Columns>
+
+## Latest Release Notes
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for teams editing docs simultaneously.
+- Introduced version pinning for stable documentation links.
+
+## Improvements
+
+- Enhanced search with fuzzy matching and code snippet highlighting.
+- Optimized build times by `{30%}` for large doc sites.
+
+## Bug Fixes
+
+- Fixed rendering issues with nested `{<CodeGroup>}` components.
+- Resolved mobile sidebar collapse on tab switch.
+
+</Update>
+
+## Version History
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Built-in theming with custom brand colors like `#3B82F6`.
+- Integrated analytics dashboard for doc usage insights.
+
+## Improvements
+
+- Streamlined sidebar navigation with search-as-you-type.
+
+## Bug Fixes
+
+- Corrected `<ParamField>` escaping for `{< >}` characters.
+- Patched export failures for MDX with embedded `{mermaid}` diagrams.
+
+<CodeGroup tabs="Before,After">
+  ```javascript
+  // Before: Escaping failed
+  const config = { apiKey: "<YOUR_KEY>" };
+  ```
+  ```javascript
+  // After: Proper escaping
+  const config = { apiKey: `YOUR_API_KEY` };
+  ```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core MDX component support including `{<Steps>}`, `{<Tabs>}`, and `{<Callout>}`.
+- Full-text search across all documentation pages.
+
+## Breaking Changes
+
+- Updated default theme; migrate custom CSS to new variables.
+
+## Bug Fixes
+
+- Initial stability fixes for deployment pipelines.
+
+</Update>
+
+<Callout kind="tip">
+  Upgrade using your package manager. Test in staging first for breaking changes.
+</Callout>
+
+<Steps>
+  <Step title="Backup" icon="database">
+    Export your current docs to avoid data loss.
+  </Step>
+  <Step title="Update" icon="download">
+    Run the update command for your platform.
+  </Step>
+  <Step title="Verify" icon="check-circle">
+    Build and preview locally.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="npm" icon="package">
+    ```bash
+    npm install mohd-shaban@latest
+    ```
+  </Tab>
+  <Tab title="yarn" icon="package">
+    ```bash
+    yarn add mohd-shaban@latest
+    ```
+  </Tab>
+</Tabs>
+
+## Upcoming Changes
+
+<ExpandableGroup>
+  <Expandable title="v1.3.0 Preview" default-open="true">
+
+  Plan to introduce AI-assisted doc generation and multi-language support.
+
+  - Auto-generate API docs from OpenAPI specs.
+  - RTL layout for international docs.
+
+  Watch this space for beta access.
+
+  </Expandable>
+  <Expandable title="Migration Guide">
+
+  Review deprecated components before v2.0.
+
+  | Old Component | New Component |
+  |---------------|---------------|
+  | `<OldTable>`  | Markdown table |
+  | `{<Custom>}`  | `{<Card>}`    |
+
+  </Expandable>
+</ExpandableGroup>
+
+Stay tuned for more updates to enhance your MOHD SHABAN experience. Contribute feedback via the GitHub repository to shape future releases.

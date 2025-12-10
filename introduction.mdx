@@ -1,0 +1,113 @@
+---
+title: Welcome to MOHD SHABAN Documentation
+description: An overview of the MOHD SHABAN documentation platform, designed to help you organize and manage project documentation efficiently.
+---
+
+## Overview
+
+Welcome to MOHD SHABAN Documentation, your centralized platform for creating, organizing, and maintaining project documentation. You can build comprehensive guides, API references, and tutorials using intuitive MDX-based authoring. This space supports version control, search, and collaboration, making it easy to keep your team's knowledge up to date.
+
+MOHD SHABAN streamlines documentation workflows with powerful components like interactive tabs, code examples, and diagrams. Whether you document software projects, internal processes, or user guides, this platform scales with your needs.
+
+## Key Features
+
+Discover the core capabilities that make MOHD SHABAN stand out.
+
+<Columns cols={3}>
+  <Card title="Interactive Components" icon="components" href="/docs/components">
+    Use `<Tabs>`, `<Steps>`, and `<Cards>` to create engaging, dynamic pages that users interact with seamlessly.
+  </Card>
+  <Card title="MDX Power" icon="code" href="/docs/mdx-syntax">
+    Write in familiar Markdown with JSX superpowers, including custom components and syntax highlighting.
+  </Card>
+  <Card title="Collaboration Tools" icon="users" href="/docs/collaboration">
+    Share drafts, review changes, and publish updates with Git-based workflows.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  All pages support brand customization, such as the primary color `#3B82F6`.
+</Callout>
+
+## How to Navigate
+
+Start exploring with these structured paths tailored to your role.
+
+<Tabs>
+  <Tab title="Developers" icon="code">
+    Focus on API docs and code examples.
+    
+    ```javascript
+    // Example: Fetch project data
+    const response = await fetch('https://api.mohdshaban.com/projects');
+    const projects = await response.json();
+    console.log(projects);
+    ```
+  </Tab>
+  <Tab title="Content Creators" icon="edit-3">
+    Build guides using steps and callouts.
+    
+    <Steps>
+      <Step title="Create Page" icon="file-plus">
+        Add a new `.mdx` file in your repo.
+      </Step>
+      <Step title="Add Components" icon="puzzle">
+        Insert `<CodeGroup>` for multi-language support.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Admins" icon="settings">
+    Manage spaces and permissions.
+    
+    ```bash
+    # Clone and setup
+    git clone https://github.com/your-org/mohd-shaban-docs.git
+    npm install
+    npm run dev
+    ```
+  </Tab>
+</Tabs>
+
+## Quick Start
+
+Follow these steps to set up your first documentation page.
+
+<Steps>
+  <Step title="Initialize Project" icon="download">
+    Create a new repository and add the MDX template.
+    
+    <CodeGroup tabs="npm,yarn">
+    ```bash
+    npm init mdx-docs@latest my-docs
+    ```
+    ```bash
+    yarn create mdx-docs my-docs
+    ```
+    </CodeGroup>
+  </Step>
+  
+  <Step title="Write Content" icon="edit">
+    Edit `introduction.mdx` with frontmatter and components.
+  </Step>
+  
+  <Step title="Preview Locally" icon="eye">
+    Run `npm run dev` to see live changes.
+  </Step>
+  
+  <Step title="Deploy" icon="upload-cloud">
+    Push to GitHub for automatic deployment.
+  </Step>
+</Steps>
+
+## Advanced Navigation
+
+<ExpandableGroup>
+  <Expandable title="Search and Filters" default-open="true">
+    Use the global search bar to find topics by keywords. Filter by tags like `api`, `guide`, or `tutorial`.
+  </Expandable>
+  <Expandable title="Version History">
+    Access changelogs via dedicated pages. Each release includes breaking changes and new features.
+  </Expandable>
+</ExpandableGroup>
+
+This platform empowers you to deliver polished documentation. Dive into sections using the sidebar menu.
